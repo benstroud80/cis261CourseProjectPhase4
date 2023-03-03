@@ -1,0 +1,3 @@
+benjamin|alphabet|ADMIN
+monique|alphabet1|USER
+tyson|universe|ADMIN

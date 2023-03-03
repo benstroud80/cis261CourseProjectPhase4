@@ -3,7 +3,7 @@ from datetime import datetime
 def CreateUsers():
     print('##### Create users, passwords, and roles #####')
     # Open the file user.txt in append mode and assign to UserFile
-    UserFile = open("Users.txt", "a")
+    UserFile = open("User.txt", "a")
     while True:
         # Call function GetUserName and assign the return value to username
         username = GetUserName()
@@ -39,7 +39,7 @@ def GetUserRole():
             print("Invalid role. Please enter either Admin or User.")
 
 def printuserinfo():
-    UserFile = open("Users.txt","r")
+    UserFile = open("User.txt","r")
     while True:
         UserDetail = UserFile.readline()
         if not UserDetail:
@@ -50,7 +50,7 @@ def printuserinfo():
         userpwd = UserList[1]
         userrole = UserList[2]
         print("User Name: ", username, " Password: ", userpwd, " Role: ", userrole)
-  
+
 def Login():
     # read login information and store in a list
     # Open the file Users.txt in read mode
@@ -61,17 +61,18 @@ def Login():
         # Read a line from UserFile and assign it to UserDetail
         UserDetail = UserFile.readline()
         if not UserDetail:
-            break
-        # Replace the carriage return in UserDetail
+            return UserRole, UserName
+                    # Replace the carriage return in UserDetail
         UserDetail = UserDetail.replace("\n", "")
         # Split UserDetail on the pipe delimiter (|) and assign it to UserList
         UserList = UserDetail.split("|")
         if UserName == UserList[0]:
             UserRole = UserList[2]  # user is valid, return role
             return UserRole, UserName
-     
+    return UserRole, UserName
+###############################################################
 def GetEmpName():
-    empname = input ("Enter employee name or END to end: ")
+    empname = input ("Enter employee name: ")
     return empname
 
 def GetDatesWorked():
@@ -132,7 +133,7 @@ def printinfo(DetailsPrinted):
         hourlyrate = float(EmpList[4])
         taxrate = float(EmpList[5])
         grosspay, incometax, netpay = CalcTaxAndNetPay(hours, hourlyrate, taxrate)
-        print(fromdate, todate, empname, f"{hours:,.2f}", f"hourlyrate:,.2f", f"{grosspay:,.2f}"), f"{taxrate:,.1%}", f"{incometax:,.2f}", f"{netpay:,.2f}")
+        print(fromdate, todate, empname, f"{hours:,.2f}", f"hourlyrate:,.2f", f"{grosspay:,.2f}", f"{taxrate:,.1%}", f"{incometax:,.2f}", f"{netpay:,.2f}")
         TotEmployees += 1
         TotHours += hours
         TotGrossPay += grosspay
@@ -148,7 +149,6 @@ def printinfo(DetailsPrinted):
         PrintTotals (EmpTotals)
     else:
         print("No detail information to print")
-
 def PrintTotals(EmpTotals):    
       print()
       print(f'Total Number Of Employees: {EmpTotals["TotEmp"]}')
