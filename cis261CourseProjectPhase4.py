@@ -47,9 +47,9 @@ def printuserinfo():
         UserDetail = UserDetail.replace("\n", "") #remove carriage return from end of line
         UserList = UserDetail.split("|")
         username = UserList[0]
-        userpwd = UserList[1]
+        userpassword = UserList[1]
         userrole = UserList[2]
-        print("User Name: ", username, " Password: ", userpwd, " Role: ", userrole)
+        print("User Name: ", username, " Password: ", userpassword, " Role: ", userrole)
 
 def Login():
     # read login information and store in a list
