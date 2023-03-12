@@ -52,6 +52,7 @@ def printuserinfo():
         print("User Name: ", username, " Password: ", userpassword, " Role: ", userrole)
 print("userinfo")
 print()
+
 def Login():
     # read login information and store in a list 
     # Open the file Users.txt in read mode
