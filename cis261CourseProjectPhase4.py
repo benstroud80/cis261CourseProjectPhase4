@@ -18,7 +18,7 @@ def CreateUsers():
     # close file to save data
     # Close the file UserFile
     UserFile.close()
-    
+    printuserinfo() 
 def GetUserName():
     # Enter the username or End and return username
     username = input("Enter user name or 'End': ")
@@ -50,9 +50,10 @@ def printuserinfo():
         userpassword = UserList[1]
         userrole = UserList[2]
         print("User Name: ", username, " Password: ", userpassword, " Role: ", userrole)
-
+print("userinfo")
+print()
 def Login():
-    # read login information and store in a list
+    # read login information and store in a list 
     # Open the file Users.txt in read mode
     UserFile = open("Users.txt", "r")
     UserName = input("Enter User Name: ")

@@ -2,3 +2,5 @@ benjamin|alphabet|ADMIN
 monique|alphabet1|USER
 tyson|universe|ADMIN
 benjamin|alphabet|ADMIN
+ben|alphabetsoup|ADMIN
+benjamin|alphabet123|USER
